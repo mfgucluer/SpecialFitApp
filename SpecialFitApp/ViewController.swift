@@ -1,19 +1,27 @@
-//
-//  ViewController.swift
-//  SpecialFitApp
-//
-//  Created by Mustafa Fatih on 6/14/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var receipImage: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        receipImage.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(gotoRecipe))
+        receipImage.addGestureRecognizer(gesture)
+        
+    }
+    
+    @objc func gotoRecipe() {
+        print("fatih")
+        performSegue(withIdentifier: "toRecipeVc", sender: nil)
+        
     }
 
-
+    
 }
 
